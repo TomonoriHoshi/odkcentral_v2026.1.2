@@ -11,7 +11,6 @@ docker:
 docker-user:
 	sudo usermod -aG docker $(shell whoami)
 	sudo systemctl restart docker
-	exit
 	@echo "need to logout"
 
 central:
