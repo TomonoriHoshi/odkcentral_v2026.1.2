@@ -12,11 +12,13 @@ docker-user:
 	sudo usermod -aG docker $(shell whoami)
 	sudo systemctl restart docker
 	exit
+	@echo "need to logout"
 
 central:
 	git clone https://github.com/getodk/central
 	mv central ../
 	cd ../central && git submodule update -i
+	touch ../central/files/allow-postgres14-upgrade
 	@echo "need to update .env"
 
 centralSetup:
